@@ -29,14 +29,14 @@ namespace 计数排序
                 }
             }
 
-            int[] newArray = new int[max - min + 1];//这个数组存放 array中每个元素出现的次数 索引为元素值减去min
+            int[] newArray = new int[max - min + 1];//计数数组 这个数组存放 array中每个元素出现的次数 索引为元素值减去min
             for (int i = 0; i < array.Length; i++)
             {
                 newArray[array[i] - min]++;
             }
 
             int index = 0;
-            for (int i = 0; i < newArray.Length; i++)
+            for (int i = 0; i < newArray.Length; i++)//根据计数数组将元素按正确顺序放入原数组array
             {
                 while(newArray[i]>0)
                 {

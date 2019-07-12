@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "冒泡排序", "冒泡排�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "计数排序", "计数排序\计数排序.csproj", "{BDAE7CB7-0BBD-42BF-BDE6-97E867EF22C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "桶排序", "桶排序\桶排序.csproj", "{CB3DC871-2CD2-424B-9D92-B0F34A58894B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{BDAE7CB7-0BBD-42BF-BDE6-97E867EF22C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDAE7CB7-0BBD-42BF-BDE6-97E867EF22C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDAE7CB7-0BBD-42BF-BDE6-97E867EF22C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB3DC871-2CD2-424B-9D92-B0F34A58894B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB3DC871-2CD2-424B-9D92-B0F34A58894B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB3DC871-2CD2-424B-9D92-B0F34A58894B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB3DC871-2CD2-424B-9D92-B0F34A58894B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
