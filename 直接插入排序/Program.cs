@@ -30,10 +30,28 @@ namespace 直接插入排序
                 index = i - 1;
                 while(index>=0 && array[index]>temp)
                 {
-                    array[index + 1] = array[index];
+                    array[index + 1] = array[index];//将前面已排序队列 中大于temp的数 往后挪一位
                     index--;
                 }
                 array[index + 1] = temp;
+            }
+        }
+
+        public static void InsertSort(int[] array)
+        {
+            for (int i = 1; i < array.Length; i++)
+            {
+                int temp = array[i];
+                for (int j = i - 1; j >= 0; j--)
+                {
+                    if (array[j] > temp)
+                    {
+                        array[j + 1] = array[j];
+                        array[j] = temp;
+                    }
+                    else
+                        break;
+                }
             }
         }
     }

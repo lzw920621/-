@@ -17,26 +17,26 @@ namespace 希尔排序
         /// <summary>
         /// 希尔排序
         /// </summary>
-        public static T[] ShellSort<T>(T[] arr) where T : IComparable
+        public static T[] ShellSort<T>(T[] array) where T : IComparable
         {
-            for (int step = arr.Length >> 1; step > 0; step >>= 1)
+            for (int step = array.Length >> 1; step > 0; step >>= 1)
             {
-                for (int i = 0; i < step; ++i)
+                for (int i = 0; i < step; i++)
                 {
-                    for (int j = i + step; j < arr.Length; j += step)
+                    for (int j = i + step; j < array.Length; j += step)
                     {
                         int k = j;
-                        T value = arr[j];
-                        while (k >= step && arr[k - step].CompareTo(value) > 0)
+                        T value = array[j];//待插入的值
+                        while (k >= step && array[k - step].CompareTo(value) > 0)
                         {
-                            arr[k] = arr[k - step];
+                            array[k] = array[k - step];//将前面已排序队列 中大于value的数 往后挪一个step
                             k -= step;
                         }
-                        arr[k] = value;
+                        array[k] = value;
                     }
                 }
             }
-            return arr;
+            return array;
         }
     }
 }
