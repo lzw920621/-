@@ -15,7 +15,7 @@ namespace TopK算法
             int[] array = { 1, 10, 2, 20, 3, 30, 4, 40, 5, 50, 6, 60, 7, 70, 8, 80, 9, 90 };
             int k = 10;
 
-            TopK(array, 0, array.Length - 1, k);
+            //TopK(array, 0, array.Length - 1, k);
 
             int[] topK=TopK_1(array, k);
 
