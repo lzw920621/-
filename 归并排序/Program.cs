@@ -12,7 +12,7 @@ namespace 归并排序
         {
             int[] array = new int[] { 3, 1, 9, 6, 5, 4, 2 };
 
-            MergeSort(array,0,array.Length-1);
+            MergeSort(array);
 
             foreach (var item in array)
             {
@@ -62,6 +62,61 @@ namespace 归并排序
                     array[i] = array2[n];
                     n++;
                 }
+            }
+        }
+
+
+        static void MergeSort(int[] array)
+        {
+            int[] tempArray = new int[array.Length];//提前分配的临时数组(用来存放 合并后的有序序列) 避免每次在merge方法里分配两个新数组 提高效率
+            MergeSort_Assist(array, 0, array.Length - 1, tempArray);
+        }
+        static void MergeSort_Assist(int[] array,int left,int right, int[] tempArray)
+        {
+            if(left<right)
+            {
+                int midIndex = (left + right) / 2;
+                MergeSort_Assist(array, left, midIndex, tempArray);
+                MergeSort_Assist(array, midIndex + 1, right, tempArray);
+                Merge_(array, left, midIndex, right, tempArray);
+            }
+        }
+        static void Merge_(int[] array,int left,int mid,int right,int[] tempArray)
+        {
+            int i = left;
+            int j = mid + 1;
+            int index = 0;
+            while(i<=mid && j<=right)
+            {
+                if(array[i]<array[j])
+                {
+                    tempArray[index] = array[i];
+                    i++;
+                    index++;
+                }
+                else
+                {
+                    tempArray[index] = array[j];
+                    j++;
+                    index++;
+                }
+            }
+            while(i<=mid)
+            {
+                tempArray[index] = array[i];
+                i++;
+                index++;
+            }
+            while(j<=right)
+            {
+                tempArray[index] = array[j];
+                j++;
+                index++;
+            }
+
+            for (int k = 0; k <index; k++)//将临时数组tempArray中合并好的元素放到 原数组array中
+            {
+                array[left + k] = tempArray[k];
             }
         }
     }

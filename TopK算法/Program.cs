@@ -15,14 +15,15 @@ namespace TopK算法
             int[] array = { 1, 10, 2, 20, 3, 30, 4, 40, 5, 50, 6, 60, 7, 70, 8, 80, 9, 90 };
             int k = 10;
 
-            //TopK(array, 0, array.Length - 1, k);
+            TopK(array, 0, array.Length - 1, k);
 
-            int[] topK=TopK_1(array, k);
+            //int[] topK=TopK_1(array, k);
 
         }
 
         public static void TopK(int[] data, int low, int high, int k)//利用 快速排序 的思路来实现 时间复杂度O(n)
         {
+            if (low >= high) return;
             int left = low;
             int right = high;
             int mid = data[low];
